@@ -16,7 +16,7 @@
 <div align="space-between">
   <img src="https://github.com/Panda-Hope/panda-hope.github.io/blob/master/gif/regex1.png" width="293" height="109">
 </div>
-然后对于字符的连接、或、幂运算分别构造如下图所示的自动机:
+然后对于字符的连接、或、幂运算分别构造如下图所示的自动机(手动绘图, 有所粗糙见谅):
 <div align="space-between">
   <img src="https://github.com/Panda-Hope/panda-hope.github.io/blob/master/gif/regex4.png" width="617" height="157">
   <img src="https://github.com/Panda-Hope/panda-hope.github.io/blob/master/gif/regex2.png" width="658" height="253">
