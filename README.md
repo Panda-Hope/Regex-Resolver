@@ -47,5 +47,10 @@
    * T -> TE | E 
    * E -> E* | F
    * F -> id | (S)
+   
+ 由此我们便可同样将自底向上的文法的匹配转换成自动机状态的转换, 从而构造出如下图所示的DFA(确定有穷自动机)语法分析表:
+ <div align="space-between">
+  <img src="https://github.com/Panda-Hope/panda-hope.github.io/blob/master/gif/table.png" width="997" height="766">
+</div>
 
 
