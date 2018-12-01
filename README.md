@@ -12,4 +12,7 @@
 在继上面所得到的对于正则表达式的基本理解之后, 我们发现对于正则表达式的验证流程即从左至右依次验证的流程。
 于是我们便可将其视作为一种状态转换的流程，由此我们便可将上面所述的基本运算将其转换为NFA自动机的构建。
 
+对于每一个基本符号(a)构建如下图的自动机:
+<img src="https://github.com/Panda-Hope/panda-hope.github.io/blob/master/gif/regex1.png" width="375" height="667">
+
 
