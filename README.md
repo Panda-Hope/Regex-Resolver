@@ -52,5 +52,7 @@
  <div align="space-between">
   <img src="https://github.com/Panda-Hope/panda-hope.github.io/blob/master/gif/table.png" width="997" height="766">
 </div>
-
+#### 词法转换与语法制导翻译:
+最后将正则表达式符号串先转换成词法单元队列，在依照语法分析自动机对正则表达式进行移入-归约的匹配,便可完成语法的匹配。  
+从而依照语法制导翻译构建最开始所述的正则NFA自动机, 便可完成整个正则表达式自动机的构建。
 
