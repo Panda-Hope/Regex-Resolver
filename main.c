@@ -15,8 +15,10 @@ int main(int argc, const char * argv[]) {
     const char *regex1 = "5*";
     Vertex *regexObj1 = CreateRegexObj(regex1);
     bool result1 = RegexMatch("55555", regexObj1);
-
+    
     printf("%s \n", result1 ? "true" : "false");
+    
+    DestroyGrammerTable();
     
     const char *regex2 = "\\t";
     Vertex *regexObj2 = CreateRegexObj(regex2);

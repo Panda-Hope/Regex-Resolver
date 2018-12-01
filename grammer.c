@@ -28,26 +28,6 @@ SetOfItems *InitSetOfItems(void)
     return items;
 }
 
-//void FreeSetOfItems(SetOfItems *items)
-//{
-//    if (!items) return;
-//    
-//    FreeStack(items->SetOfItem_Stack);
-//    
-//    ItemsArc *arc = items->arc;
-//    while (arc) {
-//        FreeSetOfItems(arc->items);
-//        
-//        ItemsArc *t = arc;
-//        arc = arc->next;
-//        free(t);
-//        t = NULL;
-//    }
-//    
-//    free(items);
-//    items = NULL;
-//}
-
 /* 为每一个形如: A->α 的文法产生式构造一个DFA自动机 */
 void CreateGrammerAutomat(Grammer *g)
 {
@@ -426,7 +406,63 @@ Vertex *RegexDriver(const char *regex)
     }
 }
 
+//void FreeSetOfItems(SetOfItems *items)
+//{
+//    if (!items) return;
+//
+//    FreeStack(items->SetOfItem_Stack);
+//
+//    ItemsArc *arc = items->arc;
+//    while (arc) {
+//        FreeSetOfItems(arc->items);
+//
+//        ItemsArc *t = arc;
+//        arc = arc->next;
+//        free(t);
+//        t = NULL;
+//    }
+//
+//    free(items);
+//    items = NULL;
+//}
+
 void DestroyGrammerTable(void)
 {
+    if (!GrammerTable_Stack) return;
     
+    /* 释放语言表状态集 */
+    while (!EmptyStack(GrammerTable_Stack)) {
+        SetOfItems *items = Pop(GrammerTable_Stack);
+        ItemsArc *itemsArc = items->arc;
+        
+        while (itemsArc) {
+            ItemsArc *t = itemsArc;
+            itemsArc = itemsArc->next;
+            free(t);
+            t = NULL;
+        }
+        
+        FreeStack(items->SetOfItem_Stack);
+        free(items);
+        items = NULL;
+    }
+    
+    /* 释放文法自动机 */
+    for (int i=0;i<grammerSize;i++) {
+        Automat *automat = grammers[i].automat;
+        Vertex *v = automat->f;
+        
+        while (v->arc) {
+            Vertex *t = v;
+            v = v->arc->v;
+            free(t->arc);
+            free(t);
+        }
+        
+        grammers[i].automat = NULL;
+    }
+    
+    
+    FreeStack(GrammerTable_Stack);
+    GrammerTable_Stack = NULL;
 }
