@@ -181,11 +181,11 @@ Stack *GetGrammerTable(void)
 //    printf("%ld \n", size);
     
     // 测验闭包项集中数据是否正确
-    for (int i=0;i<size;i++) {
-        Vertex *v = (Vertex *)*(test->SetOfItem_Stack->base + i);
-        if (v->arc) printf("%c ", v->arc->c);
-    }
-    printf("\n");
+//    for (int i=0;i<size;i++) {
+//        Vertex *v = (Vertex *)*(test->SetOfItem_Stack->base + i);
+//        if (v->arc) printf("%c ", v->arc->c);
+//    }
+//    printf("\n");
     
     // 测验闭包项连接弧是否正确
 //    ItemsArc *itemsArc = test->arc;
