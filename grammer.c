@@ -175,21 +175,22 @@ Stack *GetGrammerTable(void)
     }
     
     /* 闭包项集状态检验程序 */
-//    SetOfItems *test = (SetOfItems *)*(SetOfItems_Stack->base+10);
+    SetOfItems *test = (SetOfItems *)*(SetOfItems_Stack->base+7);
 //    test = test->arc->items;
-//    size_t size = test->SetOfItem_Stack->top - test->SetOfItem_Stack->base;
-
+    size_t size = test->SetOfItem_Stack->top - test->SetOfItem_Stack->base;
+//    printf("%ld \n", size);
+    
     // 测验闭包项集中数据是否正确
-//    for (int i=0;i<size;i++) {
-//        Vertex *v = (Vertex *)*(test->SetOfItem_Stack->base + i);
-//        if (v->arc) printf("%c ", v->arc->c);
-//    }
-//    printf("\n");
+    for (int i=0;i<size;i++) {
+        Vertex *v = (Vertex *)*(test->SetOfItem_Stack->base + i);
+        if (v->arc) printf("%c ", v->arc->c);
+    }
+    printf("\n");
     
     // 测验闭包项连接弧是否正确
 //    ItemsArc *itemsArc = test->arc;
 //    while (itemsArc) {
-//        printf("%d ", itemsArc->c);
+//        printf("%c ", itemsArc->c);
 //        itemsArc = itemsArc->next;
 //    }
 //    printf("\n");
