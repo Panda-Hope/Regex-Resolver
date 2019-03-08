@@ -29,8 +29,8 @@ int main(int argc, const char * argv[]) {
 //    printf("%s \n", result3 ? "true" : "false");
 //    printf("%s \n", result4 ? "true" : "false");
     
-    Vertex *regex = CreateRegexObj(argv[0]);
-    bool result = RegexMatch(argv[1], regex);
+    Vertex *regex = CreateRegexObj(argv[1]);
+    bool result = RegexMatch(argv[2], regex);
     
     printf("%s", result ? "true" : "false");
     
