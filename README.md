@@ -1,5 +1,6 @@
 # Regex-Resolver
-基于NFA(不确定有穷自动机)与自底向上语法分析构造的正则表达式解析器
+基于NFA(不确定有穷自动机)与自底向上语法分析构造的正则表达式解析器[[
+[在线测试地址](http://liangljuan.com/regex)
 
 ### Regex-Resolver流程构造剖析:
 
